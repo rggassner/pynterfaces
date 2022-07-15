@@ -75,7 +75,10 @@ def update_data():
     global interfaces
     global ip
     global community
-    ip=hostid_entry.get()
+    newip=hostid_entry.get()
+    if newip != ip:
+        ip=newip
+        interfaces=collections.defaultdict(dict)
     community=communityg_entry.get()
     children=tree.get_children()
     for child in children:
